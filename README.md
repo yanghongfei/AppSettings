@@ -94,7 +94,7 @@ $ pip3 install -r requirements.txt
 
 - 手动启动
 ```bash
-$ python3 app --port=9000
+$ python3 app.py --port=9000
 ```
 
 - 守护进程
