@@ -3,7 +3,7 @@
 # @Time    : 2018/11/5 13:06
 # @Author  : Fred Yang
 # @File    : app.py
-# @Role    :
+# @Role    : 启动程序
 
 
 import fire
