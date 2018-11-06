@@ -43,12 +43,18 @@ print(r.text)
 -  返回格式：`dict`
 ```json
 {
-  "status": 0,
-  "data": [{
-        "name": "EMAIL_HOST",
-        "value": "smtp.exmail.qq.com"
-  }],
-  "msg": "查询成功"
+    "status": 0,
+    "data": {
+        "SITE_URL": "http://opendevops.cn",
+        "EMAIL_SUBJECT_PREFIX": "OpenDevOps",
+        "EMAIL_HOST": "smtp.exmail.qq.com",
+        "EMAIL_PORT": "465",
+        "EMAIL_HOST_USER": "user@domain.com",
+        "EMAIL_HOST_PASSWORD": "password",
+        "EMAIL_USE_SSL": "true",
+        "EMAIL_USE_TLS": "false"
+    },
+    "msg": "查询成功"
 }
 ```
 
