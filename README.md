@@ -29,6 +29,7 @@
 - 支持： Get/POST/PUT/DELETE
 
 ##### GET示例
+- 返回所有配置信息
 ```python
 import requests
 
@@ -42,12 +43,12 @@ print(r.text)
 -  返回格式：`dict`
 ```json
 {
-	  "status": 0,
-	  "data": [{
-		    "name": "EMAIL_HOST",
-		    "value": "smtp.exmail.qq.com"
-	  }],
-	  "msg": "查询成功"
+  "status": 0,
+  "data": [{
+        "name": "EMAIL_HOST",
+        "value": "smtp.exmail.qq.com"
+  }],
+  "msg": "查询成功"
 }
 ```
 
@@ -59,8 +60,8 @@ print(r.text)
 
 ```python
 {
-	    "name": "SITE_URL",
-	    "value": "http://opendevops.cn"
+    "name": "SITE_URL",
+    "value": "http://opendevops.cn"
 }
 ```
 
