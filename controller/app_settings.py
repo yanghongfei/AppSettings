@@ -17,18 +17,19 @@ class AppSettingsHandler(tornado.web.RequestHandler):
 
     def get(self, *args, **kwargs):
         """返回所有数据"""
-        r_datas = []
+        # r_datas = []
+        r_dict = {}
         try:
             info = db_session.query(AppSettings).all()
             for data in info:
-                info_data = {
-                    'name': data.name,
-                    'value': data.value
-                }
-                r_datas.append(info_data)
+                r_dict[data.name] = data.value
+                # info_data = {
+                #     data.name: data.value,
+                # }
+                # r_datas.append(info_data)
             resp = {
                 'status': 0,
-                'data': r_datas,
+                'data': r_dict,
                 'msg': '查询成功'
             }
             return self.write(resp)
@@ -36,26 +37,6 @@ class AppSettingsHandler(tornado.web.RequestHandler):
         except Exception as e:
             print(e)
             db_session.rollback()
-
-        # data = self.get_argument('name')
-        # if isinstance(data,str):
-        #     data = json.loads(data)
-        #
-        # print('222', data, type(data))
-        # r_datas = []
-        # for name in data:
-        #     info = db_session.query(AppSettings).filter(AppSettings.name==name).first()
-        #     info = {
-        #         'name':name,
-        #         'value':info.value
-        #     }
-        #     r_datas.append(info)
-        # resp = {
-        #         'status':0,
-        #         'data':r_datas,
-        #         'msg':'查询成功'
-        #     }
-        # self.write(resp)
 
     def post(self, *args, **kwargs):
         """新增配置信息"""
